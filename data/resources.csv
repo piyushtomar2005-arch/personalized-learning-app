@@ -1,0 +1,8 @@
+subject,topic,title,type,description,url
+Python,Functions,Python Functions (Official Tutorial),Documentation,Defining functions in the official docs,https://docs.python.org/3/tutorial/controlflow.html#defining-functions
+Python,Lists,Python Lists (Official Tutorial),Documentation,Official guide to lists,https://docs.python.org/3/tutorial/datastructures.html
+Java,Collections,Java Collections Trail,Documentation,Oracle Java tutorial on collections,https://docs.oracle.com/javase/tutorial/collections/
+Java,Exception Handling,Java Exceptions Trail,Documentation,Oracle Java tutorial on exceptions,https://docs.oracle.com/javase/tutorial/essential/exceptions/
+Computer Networks,HTTP,HTTP Overview (MDN),Documentation,MDN guide to HTTP,https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+DBMS,SQL,SQL Tutorial,Notes,W3Schools SQL notes,https://www.w3schools.com/sql/
+AI/ML,Machine Learning Basics,Scikit-learn User Guide,Documentation,Official scikit-learn guide,https://scikit-learn.org/stable/user_guide.html

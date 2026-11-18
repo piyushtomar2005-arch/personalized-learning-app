@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<h2>Practice Weak Topics</h2><p class="text-muted">Practice difficulty adapts to your performance in each topic.</p>
+<div class="row g-3">{% for r in recs %}<div class="col-md-6"><div class="card p-3">
+<b>{{ r.subject }} – {{ r.topic }}</b><div class="my-2">Current score: {{ (r.score~'%') if r.score is not none else 'New topic' }} · Recommended: <b>{{ r.n }} {{ r.difficulty }} questions</b> ({{ r.trend }})</div>
+<a class="btn btn-primary btn-sm" href="{{ url_for('quiz', subject=r.subject_id, topic=r.topic_id, n=r.n, difficulty='adaptive', auto=1) }}">Start practice</a></div></div>
+{% else %}<p>Select subjects to get practice recommendations.</p>{% endfor %}</div>{% endblock %}

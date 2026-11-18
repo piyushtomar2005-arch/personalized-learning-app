@@ -1,0 +1,31 @@
+subject,topic,difficulty,question,a,b,c,d,answer,explanation
+Mathematics,Algebra,Easy,Solve 2x + 6 = 10. What is x?,1,2,3,4,B,2x = 4 so x = 2.
+Mathematics,Probability,Easy,Probability of heads in one fair coin toss?,1/4,1/3,1/2,1,C,Two equally likely outcomes.
+Mathematics,Statistics,Medium,Median of 3 5 7 9 11?,5,7,9,8,B,The middle value is 7.
+Mathematics,Calculus,Hard,Derivative of x^3?,x^2,3x^2,3x,x^3/3,B,Power rule: n*x^(n-1).
+DBMS,Normalization,Easy,Which normal form removes partial dependency?,1NF,2NF,3NF,BCNF,B,2NF removes partial dependency.
+DBMS,SQL,Easy,Which SQL command retrieves data?,INSERT,UPDATE,SELECT,DROP,C,SELECT reads rows from tables.
+DBMS,Transactions,Medium,Which ACID property gives all-or-nothing execution?,Atomicity,Consistency,Isolation,Durability,A,Atomicity: a transaction fully completes or not at all.
+DBMS,Indexing,Hard,Which structure do most relational DB indexes use?,Stack,B+ tree,Queue,Heap,B,B+ trees give fast range and point lookups.
+Operating System,Process Management,Easy,A process waiting for the CPU is in which state?,New,Ready,Running,Terminated,B,Ready processes wait in the ready queue.
+Operating System,Scheduling,Medium,Which scheduling can cause starvation?,FCFS,Round Robin,Priority scheduling,None,C,Low priority processes may never run.
+Operating System,Deadlock,Hard,Which is NOT a necessary condition for deadlock?,Mutual exclusion,Hold and wait,Circular wait,Preemption,D,No preemption is required; preemption is not.
+Operating System,Memory Management,Medium,Paging eliminates which fragmentation?,Internal,External,Both,None,B,Fixed-size frames remove external fragmentation.
+Java,OOP,Easy,Which keyword creates an object?,new,make,create,object,A,new allocates an object.
+Java,Inheritance,Medium,Which keyword is used for inheritance?,implements,extends,inherits,super,B,A class extends another class.
+Java,Exception Handling,Medium,Which block always executes?,try,catch,finally,throw,C,finally runs whether or not an exception occurs.
+Java,Collections,Hard,Which collection does not allow duplicates?,ArrayList,LinkedList,HashSet,Vector,C,Sets store unique elements.
+Computer Networks,OSI Model,Easy,How many layers are in the OSI model?,4,5,6,7,D,OSI has 7 layers.
+Computer Networks,TCP/IP,Medium,TCP is?,Connectionless,Connection-oriented,Physical layer,Routing protocol,B,TCP sets up a connection first.
+Computer Networks,Routing,Hard,Which is a link-state routing protocol?,RIP,OSPF,ARP,DNS,B,OSPF uses link-state information.
+Computer Networks,HTTP,Easy,Default port of HTTP?,21,25,80,443,C,HTTP uses port 80.
+Python,Variables,Easy,Which is a valid variable name?,1x,my-var,_x,class,C,Names may start with an underscore.
+Python,Lists,Easy,Output of len([1 2 3])?,2,3,4,Error,B,The list has 3 items.
+Python,Dictionaries,Medium,Method returning all dictionary keys?,keys(),items(),get(),pop(),A,dict.keys() returns the keys.
+Python,Functions,Medium,A function with no return statement returns?,0,None,Empty string,Error,B,Python returns None by default.
+Python,OOP,Hard,Name of the Python constructor method?,__new__only,__init__,__start__,constructor,B,__init__ initialises new objects.
+AI/ML,Machine Learning Basics,Easy,Supervised learning uses?,Labeled data,No data,Only images,Rewards only,A,Labels guide the training.
+AI/ML,Regression,Medium,Regression predicts?,Classes,Continuous values,Clusters,Rules,B,Output is a numeric value.
+AI/ML,Classification,Medium,Which is a classification algorithm?,Linear regression,Logistic regression,K-means,PCA,B,Logistic regression predicts classes.
+AI/ML,Clustering,Hard,K-means is a(n)?,Supervised method,Unsupervised method,Reinforcement method,Regression method,B,K-means groups unlabeled data.
+AI/ML,Model Evaluation,Hard,Best metric for imbalanced classes?,Accuracy,F1-score,Mean,Variance,B,F1 balances precision and recall.

@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block content %}
+<h2>Profile</h2><div class="row g-3"><div class="col-md-6"><div class="card p-4"><form method="post">
+<label class="form-label">Name</label><input class="form-control mb-2" name="name" value="{{ u.name }}" required>
+<label class="form-label">Email</label><input class="form-control mb-2" value="{{ u.email }}" disabled>
+<label class="form-label">College</label><input class="form-control mb-2" name="college" value="{{ u.college or '' }}">
+<label class="form-label">Course</label><input class="form-control mb-2" name="course" value="{{ u.course or '' }}">
+<label class="form-label">Year</label><input class="form-control mb-3" type="number" min="1" max="6" name="year" value="{{ u.year or 1 }}">
+<button class="btn btn-primary">Save</button></form></div></div>
+<div class="col-md-6"><div class="card p-4"><h5>Summary</h5><p>Level: <b>{{ o.level }}</b></p><p>Quizzes: {{ o.quizzes }} · Questions: {{ o.questions }} · Accuracy: {{ o.accuracy }}%</p></div></div></div>{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<h2>Choose your subjects</h2><p class="text-muted">Only selected subjects appear in your learning path and quizzes.</p>
+<form method="post"><div class="row g-3 mb-3">{% for s in subjects %}<div class="col-md-4"><label class="card p-3 d-block">
+<input type="checkbox" class="form-check-input me-2" name="subjects" value="{{ s.id }}" {{ 'checked' if s.id in sel }}> {{ s.icon }} <b>{{ s.name }}</b>
+<div class="small text-muted mt-1">{{ s.topics|map(attribute='name')|join(', ') }}</div></label></div>{% endfor %}</div>
+<button class="btn btn-primary">Save subjects</button></form>{% endblock %}

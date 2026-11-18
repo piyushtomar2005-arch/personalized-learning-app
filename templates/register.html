@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block content %}
+<div class="card p-4 auth-card"><h3 class="mb-3">Create account</h3>
+<form method="post">
+{% for n,l,t in [('name','Name','text'),('email','Email','email'),('password','Password (6+ chars)','password'),('college','College','text'),('course','Course','text')] %}
+<input class="form-control mb-3" type="{{t}}" name="{{n}}" placeholder="{{l}}" {{ 'required' if n in ['name','email','password'] }}>{% endfor %}
+<select class="form-select mb-3" name="year">{% for y in [1,2,3,4] %}<option value="{{y}}">Year {{y}}</option>{% endfor %}</select>
+<button class="btn btn-primary w-100">Register</button></form>
+<p class="mt-3 mb-0 small">Have an account? <a href="{{ url_for('login') }}">Login</a></p></div>
+{% endblock %}

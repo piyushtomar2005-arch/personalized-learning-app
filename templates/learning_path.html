@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block content %}
+<h2>Personalized Learning Path</h2><p class="text-muted">Weakest topics come first (priority = 100 − topic score).</p>
+<div class="card p-3 table-responsive"><table class="table align-middle"><thead><tr><th>Priority</th><th>Subject</th><th>Topic</th><th>Score</th><th>Recommended Action</th><th>Difficulty</th><th></th></tr></thead><tbody>
+{% for p in path %}<tr><td>{{ p.priority }}</td><td>{{ p.subject }}</td><td>{{ p.topic }}</td>
+<td><span class="badge bg-{{ {'Weak':'danger','Needs Improvement':'warning','Strong':'success'}.get(p.status,'secondary') }}">{{ (p.score~'%') if p.score is not none else 'New' }}</span></td>
+<td>{{ p.action }}</td><td>{{ p.difficulty }}</td>
+<td><a class="btn btn-sm btn-outline-primary" href="{{ url_for('resources', topic=p.topic_id) }}">Learn</a>
+<a class="btn btn-sm btn-primary" href="{{ url_for('quiz', subject=p.subject_id, topic=p.topic_id, n=10, difficulty='adaptive', auto=1) }}">Practice</a></td></tr>
+{% else %}<tr><td colspan="7">Select subjects first.</td></tr>{% endfor %}</tbody></table></div>{% endblock %}

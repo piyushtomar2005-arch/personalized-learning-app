@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block content %}
+<h2>Quiz Result</h2>
+<div class="row g-3 mb-3">{% for l,v in [('Score', a.percent~'%'),('Correct', a.correct),('Incorrect', a.total-a.correct),('Time', (a.seconds//60)~' min '~(a.seconds%60)~' s')] %}
+<div class="col-6 col-lg-3"><div class="card stat p-3"><div class="text-muted small">{{ l }}</div><div class="fs-3 fw-bold">{{ v }}</div></div></div>{% endfor %}</div>
+<div class="card p-3 mb-3"><h5>Feedback</h5>{% for m in fb.messages %}<p class="mb-1">{{ m }}</p>{% endfor %}</div>
+<div class="row g-3 mb-3"><div class="col-md-6"><div class="card p-3 h-100"><h5>Strong Areas</h5>{% for s in fb.strong %}<div>✅ {{ s }}</div>{% else %}<span class="text-muted">None yet</span>{% endfor %}</div></div>
+<div class="col-md-6"><div class="card p-3 h-100"><h5>Weak Areas</h5>{% for s in fb.weak %}<div>⚠️ {{ s }}</div>{% else %}<span class="text-muted">No weak areas this time 🎉</span>{% endfor %}</div></div></div>
+{% if wt %}<div class="card p-3 mb-3"><h5>Recommended Next Step</h5><p>Study <b>{{ wt.name }}</b>, watch the recommended video, attempt practice questions, then retake the topic test.</p>
+<div><a class="btn btn-primary btn-sm" href="{{ url_for('resources', topic=wt.id) }}">📺 Watch / Learn</a>
+<a class="btn btn-outline-primary btn-sm" href="{{ url_for('quiz', subject=wt.subject_id, topic=wt.id, n=10, difficulty='adaptive', auto=1) }}">Practice {{ wt.name }}</a></div></div>{% endif %}
+<div class="card p-3"><h5>Review</h5>{% for x in answers %}<div class="border-bottom py-2"><b>{{ loop.index }}. {{ x.question.text }}</b>
+<div class="{{ 'text-success' if x.is_correct else 'text-danger' }}">Your answer: {{ x.chosen or 'Not answered' }} · Correct: {{ x.question.correct }}</div>
+<small class="text-muted">{{ x.question.explanation }}</small></div>{% endfor %}</div>{% endblock %}

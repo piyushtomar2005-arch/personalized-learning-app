@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block content %}
+<h2>Take Test</h2><div id="msg"></div>
+<div id="setup" class="card p-4"><form id="sf" class="row g-3">
+<div class="col-md-4"><label class="form-label">Subject</label><select name="subject" class="form-select"><option value="mixed">Mixed (all selected subjects)</option>
+{% for s in subjects %}<option value="{{ s.id }}">{{ s.name }}</option>{% endfor %}</select></div>
+<div class="col-md-4"><label class="form-label">Questions</label><select name="n" class="form-select"><option>10</option><option>20</option><option>30</option></select></div>
+<div class="col-md-4"><label class="form-label">Difficulty</label><select name="difficulty" class="form-select"><option value="adaptive">Adaptive</option><option>Easy</option><option>Medium</option><option>Hard</option></select></div>
+<div class="col-12"><button class="btn btn-primary">Start Test</button></div></form>
+<small class="text-muted mt-2">Adaptive picks difficulty from your recent performance. If fewer questions exist than requested, all available are used.</small></div>
+<div id="test" class="d-none"><div class="d-flex justify-content-between mb-2"><b id="info"></b><b>⏱ <span id="timer">0:00</span></b></div>
+<div id="qs"></div><button id="submit" class="btn btn-success">Submit Quiz</button></div>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>{% endblock %}

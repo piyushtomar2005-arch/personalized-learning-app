@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<h2>Performance Analytics</h2><p class="text-muted">Trend slope: {{ o.slope }}% per quiz · Last change: {{ o.improvement }}%</p>
+<div class="row g-3">
+{% for id,t in [('cSubjects','Subject-wise performance'),('cTimeline','Performance over time'),('cTopics','Topic performance'),('cAccuracy','Accuracy'),('cProgress','Learning progress (change vs first quiz)')] %}
+<div class="col-lg-6"><div class="card p-3"><h6>{{ t }}</h6><canvas id="{{ id }}" height="160"></canvas></div></div>{% endfor %}</div>{% endblock %}
+{% block scripts %}<script>loadCharts(['cSubjects','cTimeline','cTopics','cAccuracy','cProgress']);</script>{% endblock %}
