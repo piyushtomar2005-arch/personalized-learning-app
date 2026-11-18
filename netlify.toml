@@ -1,3 +1,6 @@
+[build]
+  publish = "public"
+
 [[redirects]]
   from = "/*"
   to = "https://personalized-learning-app.onrender.com/:splat"
